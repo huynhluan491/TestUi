@@ -1,0 +1,103 @@
+<div class="home-wrapper">
+    <div class="circle-highlight"></div>
+    <div class="slogan-wrapper text-center">
+        <img class="left-fly-arrow position-absolute" src="assets/imgs/left-fly-arrow.png">
+        <img class="right-fly-arrow position-absolute" src="assets/imgs/right-fly-arrow.png">
+        <p class="main-slogan">
+            Generative A.I. 
+            <br>
+            Elevate your strategy 
+            <br>
+            for the future
+        </p>
+        <p class="sub-slogan">
+            Unleash the Power of Generative A.I. 
+            <br>
+            Across Any Application and Platform
+        </p>            
+        <div class="option-suggest d-flex alight- gap-2 align-items-center justify-content-center">
+            <button class="request-btn" (click)="isRequestFormPopupOpened = true">Request a Demo</button>
+            <div class="d-flex">
+                <p class="text">or</p>
+                <p class="text-highlight"> 2GAIPlug™ your application</p>
+            </div>
+        </div>
+        <div class="slogan-highlight"></div>
+        <div class="img-wrapper">
+            <div class="plugin-highlight"></div>
+            <!-- <img class="banner-img-element plugin-img" src="assets/imgs/2gai-plugin.png">
+            <img class="banner-img-element plugin-img" src="assets/imgs/plugin-bottom-highlight.png">
+            <img class="banner-img-element 2gai-dashboard-img" src="assets/imgs/2gai-home-dashboard.png">
+            <img class="banner-img-element feature-tick-img" src="assets/imgs/feature-tick.png">
+            <img class="banner-img-element ai-features-img" src="assets/imgs/ai-features.png"> -->
+            <img class="banner-img-element ai-features-img" src="assets/imgs/group-dashboard.png">
+        </div>
+    </div>
+    <div class="inside-plugin-intro">
+        <img src="assets/imgs/inside-plugin-2gai.png">
+        <img src="assets/imgs/llm-architecture.png">
+        <img src="assets/imgs/example-video-intro.png">
+    </div>
+</div>
+
+<div class="request-popup-overlay" *ngIf="isRequestFormPopupOpened">
+    <div class="popup-request-wrapper">
+        <div class="popup-header">
+            <img class="logo-icon" src="assets/icons/2gai-icon.svg">
+            <p class="header-title">Request a Demo</p>
+            <p class="header-intro">Explore our services by filling out the details below. We'll respond shortly.</p>
+        </div>
+        <form class="request-form-wrapper">
+            <div class="form-input">
+                <label class="input-label">Your Name</label>
+                <input type="text" class="input-text" placeholder="Enter your full name">
+            </div>
+            <div class="form-input">
+                <label class="input-label">Business Email</label>
+                <input type="email" class="input-text" placeholder="Enter your full name">
+            </div>
+            <div class="form-input">
+                <label class="input-label">Company</label>
+                <input type="text" class="input-text" placeholder="Your company name">
+            </div>
+            <div class="form-input">
+                <label class="input-label">Job title</label>
+                <input type="text" class="input-text" placeholder="Your job title">
+            </div>
+            <div class="form-input">
+                <label class="input-label">Tell us more about your interest</label>
+                <textarea type="text" class="input-text" placeholder="Describe what you'd like to see in the demo..."></textarea>
+            </div>
+    
+            <div class="request-submit-btn">
+                <button class="btn" (click)="showConfirmRequest()">Request a Demo</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<nz-modal 
+    [(nzVisible)]="isConfirmRequestPopupOpened" 
+    (nzOnCancel)="closeConfirmPopup()" 
+    (nzOnOk)="closeConfirmPopup()"
+    nzCentered
+    [nzFooter]="null"
+    nzClassName="custom-modal"
+    >
+    <ng-container *nzModalContent>
+        <div>
+            <img class="bg-img" src="assets/imgs/popup-check-bg.png">
+            <img class="check-img" src="assets/imgs/check-circle.png">
+            <div class="content-wrapper w-100">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <p class="popup-title">Confirmation Received!</p>
+                    <img class="close-icon" src="assets/icons/icon_close.svg" (click)="closeConfirmPopup()">
+                </div>
+                <p  class="popup-content">Thank you for expressing interest in our services. Your demo request has been successfully submitted. Our team will review the details and get back to you shortly. In the meantime, feel free to explore other areas of our website. We're excited to show you what we have in store!</p>
+                <div class="done-btn">
+                    <button class="btn" (click)="closeConfirmPopup()">Done</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+  </nz-modal>

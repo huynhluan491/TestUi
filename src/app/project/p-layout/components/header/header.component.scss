@@ -1,0 +1,68 @@
+.header-container {
+    padding: 3.4rem 16rem 0px 16rem;
+    z-index: 3;
+    .brand-name {
+        // color: #000000;
+        color: #FFF;
+        font-size: 2.6rem;
+        font-weight: 700;
+        cursor: pointer;
+        user-select: none;
+    }
+ 
+    .nav-item {
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        font-family: Inter;
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .user-btns {
+        .btn {
+            display: flex;
+            padding: 9px 18px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            color: #FFFFFF;
+            color: var(--base-white, #FFF);
+            font-family: Inter;
+            font-size: 1.6rem;
+            font-weight: 600;
+            white-space: nowrap;
+
+            &:active {
+                outline: unset !important;
+            }
+            &:active:focus-visible {
+                outline: unset !important;
+            }
+        }
+
+        .login-btn {
+            background-color: transparent;
+
+            &:active {
+                border: unset !important;
+                outline: unset !important;
+
+            }
+
+            &:active:focus-visible {
+                border: unset !important;
+                outline: unset !important;
+
+            }
+        }
+
+        .signup-btn {
+            border-radius: 8px;
+            border: 1px solid var(--primary-600, #1570EF);
+            background: var(--primary-600, #1570EF);
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        }
+    }
+}

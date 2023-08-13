@@ -1,0 +1,24 @@
+<div class="header-container position-absolute w-100">
+    <div class="nav-container d-flex pt-3 justify-content-between w-100">
+        <div class="d-flex gap-3">
+            <div class="brand-name d-flex gap-3">
+                <img src="assets/icons/2gai-icon.svg">
+                <p class="name">2GAI</p>
+            </div>
+            <ul class="d-flex gap-5 ms-5">
+                <li class="nav-item" *ngFor="let item of navItems">
+                    <p [ngStyle]="{'color': isLayoutDefault ? '#FFF' : '#475467'}">{{item.title}}</p>
+                    <img src="assets/icons/drop-down-icon.svg" *ngIf="item.listChild.length > 0 && isLayoutDefault">
+                    <img src="assets/icons/chervon-down-grey.svg" *ngIf="item.listChild.length > 0 && !isLayoutDefault">
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item " *ngFor="let child of item.listChild">{{child.title}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="user-btns d-flex">
+            <button class="btn login-btn" (click)="onLoginNavigate()">Login</button>
+            <button class="btn signup-btn">Sign up</button>
+        </div>
+    </div>
+</div>
